@@ -1,0 +1,16 @@
+{
+"name": "4 Dip steered median filter",
+"type": "inl",
+"startInl": 100,
+"stopInl": 750,
+"stepInl": 10,
+"startCrl": 300,
+"stopCrl": 1250,
+"stepCrl": 1,
+"startZ": 0.000000,
+"stopZ": 1.848000,
+"stepZ": 0.004000,
+"min": -255,
+"max": 255
+
+}

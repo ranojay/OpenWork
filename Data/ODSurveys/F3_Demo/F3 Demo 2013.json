@@ -1,0 +1,21 @@
+{
+"name": "F3 Demo 2013",
+"type": "survey_params",
+"startInl": 100,
+"stopInl": 750,
+"stepInl": 1,
+"startCrl": 300,
+"stopCrl": 1250,
+"stepCrl": 1,
+"startZ": 0.000000,
+"stopZ": 1.848000,
+"stepZ": 0.004000,
+"X": 598408.242300,
+"inlx": -0.698017,
+"crlx": 24.990254,
+"Y": 6070847.887000,
+"inly": 24.989655,
+"crly": 0.698432,
+"UTMZone": " "
+
+}

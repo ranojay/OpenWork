@@ -1,0 +1,21 @@
+{
+"name": "Penobscot",
+"type": "survey_params",
+"startInl": 1000,
+"stopInl": 1600,
+"stepInl": 1,
+"startCrl": 1000,
+"stopCrl": 1481,
+"stepCrl": 1,
+"startZ": 0.000000,
+"stopZ": 6.000000,
+"stepZ": 0.004000,
+"X": 715617.329200,
+"inlx": -5.793333,
+"crlx": 22.158004,
+"Y": 4867448.976000,
+"inly": 11.071667,
+"crly": 11.588358,
+"UTMZone": "20T"
+
+}

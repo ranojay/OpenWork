@@ -1,0 +1,21 @@
+{
+"name": "USGS Central Alaska",
+"type": "survey_params",
+"startInl": 10000,
+"stopInl": 12550,
+"stepInl": 1,
+"startCrl": 10000,
+"stopCrl": 12240,
+"stepCrl": 1,
+"startZ": 0.000000,
+"stopZ": 6.000000,
+"stepZ": 0.008000,
+"X": -50000.000000,
+"inlx": 50.000000,
+"crlx": 0.000000,
+"Y": 7222000.000000,
+"inly": 0.000000,
+"crly": 50.000000,
+"UTMZone": "05W"
+
+}

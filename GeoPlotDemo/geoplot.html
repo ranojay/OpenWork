@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body bgcolor="#ddd">
+    <!--<h3>Webview</h3>-->
+
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <!--<link rel="stylesheet" href="js/leaflet/leaflet.css" />-->
+
+
+    <div id="mainframe"> </div>
+
+   <script type="text/javascript" src="js/geoplot-all.js"></script>
+
+    <script>
+
+        var win = document.getElementById('mainframe')
+
+        var FileInput = document.createElement("INPUT");
+        FileInput.type = "file";
+        FileInput.setAttribute("id", "openFile");
+        FileInput.setAttribute("multiple", "true");
+        FileInput.setAttribute("value", "Survey");
+        FileInput.addEventListener('change', () => FileInputCB());
+
+        
+        win.appendChild(FileInput);
+        
+        var geoplot = new GeoPlot(win);
+
+        function FileInputCB()
+        {
+            //var filereader = document.getElementById("openFile");
+            if ('files' in this.FileInput)
+            {
+                if (this.FileInput.files.length == 0)
+                {
+                    this.FileInput.value = null;
+                    return;
+                }
+            }
+            var file;
+
+            var fr = new FileReader();
+            fr.onload = function ()
+            {
+                file = this.result;
+                var json = JSON.parse(file);
+                geoplot.addJSON(json);
+               
+            }
+
+            fr.readAsText(this.FileInput.files[0]);
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>
