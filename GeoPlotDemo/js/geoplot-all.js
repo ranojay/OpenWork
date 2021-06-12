@@ -343,7 +343,8 @@ class EventEmitter {
         this.viewer3ddiv = document.createElement("div");
         this.viewer3ddiv.setAttribute("id", "threed");
         this.viewer3ddiv.style.height = "92%";
-        this.viewer3ddiv.style.width = "99.5%";
+        this.viewer3ddiv.style.width = "100%";
+        this.viewer3ddiv.style.backgroundColor = "#aaa";
 
         this.viewer3dcontroldiv = document.createElement("div");
         this.viewer3dcontroldiv.style.height = "7.5%";
@@ -4148,11 +4149,12 @@ class VisAxes
         return this.node;
     }
 
-}class ViewerThreeD {
+}class ViewerThreeD
+{
     constructor(win) {
         this.scene = new THREE.Scene();
         this.win = win
-        this.width = win.clientWidth - 20;
+        this.width = win.clientWidth-10;
         this.height = win.clientHeight;
         var far = 1000000;
         this.camera = new THREE.PerspectiveCamera(45, this.height / this.width, 0.01, far);
@@ -4233,9 +4235,10 @@ class VisAxes
 
     }
 
-    onWindowResize() {
-        var w = this.win.clientWidth-8;
-        var h = this.win.clientHeight-1;
+    onWindowResize() 
+    {
+        var w = this.width;
+        var h = this.height;
         this.camera.aspect = w / h;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(w, h);
@@ -4313,7 +4316,7 @@ class VisAxes
 
     setupInset()
     {
-         var insetWidth = this.width * 2 - 100,
+         var insetWidth = this.width * 2 - 120,
              insetHeight = 150;
         this.container2 = document.getElementById('inset');
         if (this.container2 != null) {
@@ -4794,7 +4797,7 @@ class VisSurveyBox extends VisObject
 
         var distance = SG.getCornerDistance();
         this.offset = parseFloat(distance / 250); 
-        this.step = 3;
+        this.step = 5;
         //this.node = new THREE.Object3D();
         this.font = "Consolas"
         this.node.add(this.getInlAnnot());
