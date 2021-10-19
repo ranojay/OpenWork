@@ -4164,7 +4164,7 @@ class VisAxes
 
         this.light = new THREE.PointLight();
         this.adjustDiffusedLight( this.DiffuseLightValue);
-        this.light.position.set(0, 0, 10);
+        this.light.position.set(0, 100, 0);
         this.camera.add(this.light);
         this.scene.add(this.camera);
 

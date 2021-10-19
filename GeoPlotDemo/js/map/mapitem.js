@@ -77,4 +77,15 @@
         return longlats;
     }
 
+    getLatLongFromCoord(coords, utmzone)
+    {
+        var utm = "+proj=utm +zone=" + utmzone + " +ellps=WGS84 +datum=WGS84 +units=m +no_defs";//"+proj=utm +zone=20 +ellps=clrk66 +units=m +no_defs";
+        var wgs84 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs";
+
+        var latlong = proj4(utm, wgs84, [coords[0], coords[1]]);
+        
+        return latlong;
+    }
+
 }
+

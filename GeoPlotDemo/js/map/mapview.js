@@ -27,6 +27,11 @@
             var mapitem = new SurveyBoxMapItem(item,this.map.map);
             this.map.addItem(mapitem,true);
         }
+        else if (item.type == "well")
+        {
+            var mapitem = new WellMapItem(item,this.map.map);
+            this.map.addItem(mapitem);
+        }
     }
 
     addJSON(json)
