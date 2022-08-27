@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SticksLinesComponent implements OnInit {
 
+  points: string = '220,10 300,210 170,250 123,234'
+  toggle = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   getPoints() {
-    return '220,10 300,210 170,250 123,234';
+    return this.points;
   }
 
   getTooltip() {
@@ -20,6 +22,7 @@ export class SticksLinesComponent implements OnInit {
   }
 
   onClick()  {
-
+    this.toggle = !this.toggle;
+    this.points = this.toggle ? '220,10 300,210 170,250 123,210' :  '220,10 300,210 170,250 123,100';
   }
 }
