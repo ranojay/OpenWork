@@ -3,12 +3,14 @@ import { SticksData } from 'src/app/Services/sticks-data';
 
 @Component({
   selector: "svg:g[app-sticks-lines]",
-  template: `<svg:polygon [attr.points]="getPoints()" (click)="onClick()" style="fill:lime;stroke:purple;stroke-width:1"><title>{{getTooltip()}}</title></svg:polygon>`
+  template: `<svg:polygon     *ngFor="let stick of sticks"
+  [attr.points]="stick.geometry" (click)="onClick()" style="fill:lime;stroke:purple;stroke-width:1"><title>{{stick.place}}</title></svg:polygon>`
 })
 export class SticksLinesComponent implements OnInit {
 
   toggle = false;
-  @Input() geometry: string = '220,10 300,210 170,250 123,234';
+  @Input() sticks: SticksData[] =  [];
+    
   
   constructor() { }
 
@@ -16,7 +18,7 @@ export class SticksLinesComponent implements OnInit {
   }
 
   getPoints() {
-    return this.geometry;
+    return "";
   }
 
   getTooltip() {
@@ -25,6 +27,5 @@ export class SticksLinesComponent implements OnInit {
 
   onClick()  {
     this.toggle = !this.toggle;
-    this.geometry = this.toggle ? '220,10 300,210 170,250 123,210' :  '220,10 300,210 170,250 123,100';
   }
 }
