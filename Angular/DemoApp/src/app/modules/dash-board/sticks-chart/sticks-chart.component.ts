@@ -10,7 +10,7 @@ import { SticksData } from 'src/app/Services/sticks-data';
       [style.left.px]="-margin"
       [style.top.px]="-margin"
     >
-    
+    <line *ngFor="let line of scale" [attr.x1]="0" [attr.y1]="line" [attr.x2]="20" [attr.y2]="line" style="stroke:rgb(255,0,0);stroke-width:2"/>
       <svg:g  app-sticks-lines [sticks]="sticks"></svg:g>
      
     </svg>
@@ -34,7 +34,8 @@ export class SticksChartComponent implements OnInit {
   width = 500;
   height = 500;
   margin = 0;
-
+  
+  scale: number[] = [ 10, 20, 30, 40 ];
   sticks: SticksData[] =  [
     { id: 2002, place:"Ger1", geometry: "10,10 300,210 170,250 123,234" },
     { id: 2003, place:"Ger2", geometry: "20,10 300,210 170,250 123,234" },
