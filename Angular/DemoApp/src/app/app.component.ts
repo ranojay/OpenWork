@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataBaseService } from './Services/data-base.service';
+import { SticksData } from './Services/sticks-data';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DemoApp';
+  constructor(private dataBase: DataBaseService) {}
+
+  sticks: SticksData[] = this.dataBase.getData();
 }
