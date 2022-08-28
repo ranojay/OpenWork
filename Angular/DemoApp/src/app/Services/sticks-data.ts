@@ -1,6 +1,7 @@
 
-export type SticksData = {
-    id: number;
-    place: string;
-    geometry: string;
+export class SticksData{
+    public id: number = 0;
+    public place: string = "";
+    public geometry: string = "";
+    constructor() {}
 }

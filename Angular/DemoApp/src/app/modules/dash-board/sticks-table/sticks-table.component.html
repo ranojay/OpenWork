@@ -1,10 +1,10 @@
 <table>
-    <tr>
-      <th>ID</th>
-      <th>Country</th>
-      <th>Geometry</th>
+    <tr *ngFor="let stick of sticks">
+      <th>{{stick.id}}</th>
+      <th>{{stick.place}}</th>
+      <th>{{stick.geometry}}</th>
     </tr>
-    <tr>
+    <!-- <tr>
       <td>1</td>
       <td>Germany</td>
       <td>Maria Anders</td>
@@ -13,6 +13,6 @@
       <td>2</td>
       <td>Mexico</td>
       <td>Francisco Chang</td>
-    </tr>
+    </tr> -->
   </table>
   

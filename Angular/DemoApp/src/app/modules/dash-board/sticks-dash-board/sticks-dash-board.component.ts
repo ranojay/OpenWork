@@ -6,9 +6,10 @@ import { SticksData } from 'src/app/Services/sticks-data';
   templateUrl: './sticks-dash-board.component.html',
   styleUrls: ['./sticks-dash-board.component.css']
 })
+
 export class SticksDashBoardComponent implements OnInit {
 
-  @Input()  set sticks(sticks: SticksData[]) {}
+  @Input()  sticks: SticksData[] = [];
   constructor() { }
 
   ngOnInit(): void {
