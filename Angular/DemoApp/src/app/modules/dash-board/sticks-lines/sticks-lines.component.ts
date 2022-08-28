@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SticksData } from 'src/app/Services/sticks-data';
 
 @Component({
   selector: "svg:g[app-sticks-lines]",
@@ -6,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SticksLinesComponent implements OnInit {
 
-  points: string = '220,10 300,210 170,250 123,234'
   toggle = false;
+  @Input() geometry: string = '220,10 300,210 170,250 123,234';
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
   getPoints() {
-    return this.points;
+    return this.geometry;
   }
 
   getTooltip() {
@@ -23,6 +25,6 @@ export class SticksLinesComponent implements OnInit {
 
   onClick()  {
     this.toggle = !this.toggle;
-    this.points = this.toggle ? '220,10 300,210 170,250 123,210' :  '220,10 300,210 170,250 123,100';
+    this.geometry = this.toggle ? '220,10 300,210 170,250 123,210' :  '220,10 300,210 170,250 123,100';
   }
 }
