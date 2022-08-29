@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SticksData } from 'src/app/Services/sticks-data';
 
 @Component({
@@ -11,7 +11,7 @@ import { SticksData } from 'src/app/Services/sticks-data';
       [style.top.px]="-margin"
     >
     <line *ngFor="let line of scale" [attr.x1]="0" [attr.y1]="line" [attr.x2]="20" [attr.y2]="line" style="stroke:rgb(255,0,0);stroke-width:2"/>
-      <svg:g  app-sticks-lines [sticks]="sticks"></svg:g>
+      <svg:g  *ngFor="let stick of sticks" app-sticks-lines [stick]="stick"></svg:g>
      
     </svg>
   `,
@@ -36,8 +36,8 @@ export class SticksChartComponent implements OnInit {
   margin = 0;
   
   scale: number[] = [ 10, 20, 30, 40 ];
-  sticks: SticksData[] =  [
-    { id: 2002, place:"Ger1", geometry: "10,10 300,210 170,250 123,234" },
+  @Input() sticks: SticksData[] =  [];
+    /*{ id: 2002, place:"Ger1", geometry: "10,10 300,210 170,250 123,234" },
     { id: 2003, place:"Ger2", geometry: "20,10 300,210 170,250 123,234" },
     { id: 2004, place:"Ger3", geometry: "30,10 300,210 170,250 123,234" },
     { id: 2005, place:"Ger", geometry: "220,10 300,210 170,250 123,234" },
@@ -58,7 +58,7 @@ export class SticksChartComponent implements OnInit {
   stick1 : string = this.sticks[0].geometry;
   stick2 : string = this.sticks[1].geometry;
 
-  geometries : string [] = [ this.stick1, this.stick2];
+  geometries : string [] = [ this.stick1, this.stick2];*/
 
   
 
