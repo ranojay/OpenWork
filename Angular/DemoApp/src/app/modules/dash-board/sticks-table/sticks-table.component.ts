@@ -1,6 +1,5 @@
 
 import { Component, Input, OnInit } from '@angular/core';
-import { SticksData } from 'src/app/Services/sticks-data';
 
 
 
