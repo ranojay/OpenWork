@@ -13,7 +13,7 @@ export class AppComponent {
 
   //sticks: SticksData[] = this.dataBase.getData();
 
-  sticks: SticksData[] =  [ { id: 2002, place:"Ger1", geometry: "10,10 300,210 170,250 123,234" },
+  sticks: any[] =  [ { id: 2002, place:"Ger1", geometry: "10,10 300,210 170,250 123,234" },
   { id: 2003, place:"Ger2", geometry: "20,10 300,210 170,250 123,234" },
   { id: 2004, place:"Ger3", geometry: "30,10 300,210 170,250 123,234" },
   { id: 2005, place:"Ger", geometry: "220,10 300,210 170,250 123,234" },

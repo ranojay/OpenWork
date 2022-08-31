@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SticksData } from 'src/app/Services/sticks-data';
+
 
 @Component({
   selector: 'app-sticks-chart',
@@ -36,7 +36,7 @@ export class SticksChartComponent implements OnInit {
   margin = 0;
   
   scale: number[] = [ 10, 20, 30, 40 ];
-  @Input() sticks: SticksData[] =  [];
+  @Input() sticks: any[] =  [];
     /*{ id: 2002, place:"Ger1", geometry: "10,10 300,210 170,250 123,234" },
     { id: 2003, place:"Ger2", geometry: "20,10 300,210 170,250 123,234" },
     { id: 2004, place:"Ger3", geometry: "30,10 300,210 170,250 123,234" },

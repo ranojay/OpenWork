@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SticksData } from 'src/app/Services/sticks-data';
+
 
 @Component({
   selector: 'app-sticks-dash-board',
@@ -9,7 +9,7 @@ import { SticksData } from 'src/app/Services/sticks-data';
 
 export class SticksDashBoardComponent implements OnInit {
 
-  @Input()  sticks: SticksData[] = [];
+  @Input()  sticks: any[] =[];
   constructor() { }
 
   ngOnInit(): void {
