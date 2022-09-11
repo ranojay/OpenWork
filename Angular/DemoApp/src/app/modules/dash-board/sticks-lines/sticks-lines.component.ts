@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SticksLinesComponent implements OnInit {
 
   toggle = false;
-  @Input() stick: any =  {};
+  @Input() stick!: any;
     
   
   constructor() { }
