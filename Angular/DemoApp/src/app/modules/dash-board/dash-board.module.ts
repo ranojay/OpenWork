@@ -4,6 +4,7 @@ import { SticksDashBoardComponent } from './sticks-dash-board/sticks-dash-board.
 import { SticksChartComponent } from './sticks-chart/sticks-chart.component';
 import { SticksLinesComponent } from './sticks-lines/sticks-lines.component';
 import { SticksTableComponent } from './sticks-table/sticks-table.component';
+import { SticksImageListComponent } from './sticks-image-list/sticks-image-list.component';
 
 
 
@@ -12,7 +13,8 @@ import { SticksTableComponent } from './sticks-table/sticks-table.component';
     SticksDashBoardComponent,
     SticksChartComponent,
     SticksLinesComponent,
-    SticksTableComponent
+    SticksTableComponent,
+    SticksImageListComponent
   ],
   imports: [
     CommonModule
