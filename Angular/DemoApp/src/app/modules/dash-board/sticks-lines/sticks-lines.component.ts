@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: "svg:g[app-sticks-lines]",
   template: `<svg:polygon [attr.points]="stick.geometry" (click)="onClick()" style="fill:lime;stroke:black;stroke-width:1"><title>{{stick.place}}</title></svg:polygon>`,
-  styles: [ ` { padding: 25px 50px 75px 100px;}` ]
+  styles: [ ` .lines{ padding: 250px 50px 75px 100px;}` ]
 })
 export class SticksLinesComponent implements OnInit {
 

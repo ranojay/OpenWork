@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataBaseService {
 
-  data: [{ id: number; place: string; geometry: string }] = require("./data.json");
+  data: [{ id: number; place: string; geometry: string }] = require("../../assets/data.json");
   constructor() { }
 
   getData() {

@@ -1,4 +1,8 @@
 div {
     display: flex;
-    padding-left: 20px;
+    padding-left: 10px;
+}
+
+.lines {
+    padding-left:  100px;
 }
