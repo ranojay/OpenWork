@@ -1,18 +1,15 @@
 <table>
-    <tr *ngFor="let stick of sticks">
-      <th>{{stick.id}}</th>
-      <th>{{stick.place}}</th>
-      <th>{{stick.geometry}}</th>
-    </tr>
-    <!-- <tr>
-      <td>1</td>
-      <td>Germany</td>
-      <td>Maria Anders</td>
-    </tr>
     <tr>
-      <td>2</td>
-      <td>Mexico</td>
-      <td>Francisco Chang</td>
-    </tr> -->
+      <th>ID</th>
+      <th>Place</th>
+      <th>Geometry</th>
+    </tr>
+
+    <tr *ngFor="let stick of sticks">
+      <td>{{stick.id}}</td>
+      <td>{{stick.place}}</td>
+      <td>{{stick.geometry}}</td>
+    </tr>
+   
   </table>
   
