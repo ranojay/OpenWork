@@ -5,6 +5,8 @@ import { SticksChartComponent } from './sticks-chart/sticks-chart.component';
 import { SticksLinesComponent } from './sticks-lines/sticks-lines.component';
 import { SticksTableComponent } from './sticks-table/sticks-table.component';
 import { SticksImageListComponent } from './sticks-image-list/sticks-image-list.component';
+import { SticksFormComponent } from './sticks-form/sticks-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,10 +16,12 @@ import { SticksImageListComponent } from './sticks-image-list/sticks-image-list.
     SticksChartComponent,
     SticksLinesComponent,
     SticksTableComponent,
-    SticksImageListComponent
+    SticksImageListComponent,
+    SticksFormComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     SticksDashBoardComponent

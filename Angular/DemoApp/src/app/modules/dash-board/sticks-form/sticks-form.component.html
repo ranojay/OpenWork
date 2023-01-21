@@ -1,0 +1,13 @@
+<div>
+<form [formGroup]="sticksForm" (ngSubmit)="onSubmit(sticksForm.value)">
+    <table>
+        <tbody>
+            <tr *ngFor="let inpt of inputs">
+                <td><label>{{inpt}}</label></td>
+                <td><input formControlName="{{inpt}}" placeholder="Your {{inpt}}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit">Send</button>
+  </form>
+</div>
