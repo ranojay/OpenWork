@@ -1,5 +1,5 @@
 <div>
-<form [formGroup]="sticksForm" (ngSubmit)="onSubmit(sticksForm.value)">
+ <form [formGroup]="sticksForm" (ngSubmit)="onSubmit(sticksForm.value)">
     <table>
         <tbody>
             <tr *ngFor="let inpt of inputs">
@@ -9,5 +9,5 @@
         </tbody>
     </table>
     <button type="submit">Send</button>
-  </form>
+ </form>
 </div>
