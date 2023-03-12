@@ -5,11 +5,11 @@
       <th>Geometry</th>
     </tr>
 
-    <tr *ngFor="let stick of sticks">
+    <tr *ngFor="let stick of sticks " (click)="onRowSelect(stick)">
       <td>{{stick.id}}</td>
       <td>{{stick.place}}</td>
       <td>{{stick.geometry}}</td>
     </tr>
    
-  </table>
+  </table> 
   

@@ -20,4 +20,7 @@ export class SticksTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onRowSelect(stick:any) {
+    stick.isSelected =  !stick.isSelected;
+  }
 }
