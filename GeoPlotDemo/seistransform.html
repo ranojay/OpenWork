@@ -1,0 +1,80 @@
+<html lang="en">
+
+</html>
+
+<head>
+    <title>FileTransform</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        a {
+            color: #08f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainframe"> </div>
+    <script>
+        var win = document.getElementById('mainframe')
+
+        var FileInput = document.createElement("INPUT");
+        FileInput.type = "file";
+        FileInput.setAttribute("id", "openFile");
+        FileInput.setAttribute("multiple", "true");
+        FileInput.setAttribute("value", "Survey");
+        FileInput.addEventListener('change', () => FileInputCB());
+
+
+        win.appendChild(FileInput);
+
+
+        function FileInputCB() {
+            //var filereader = document.getElementById("openFile");
+            if ('files' in this.FileInput) {
+                if (this.FileInput.files.length == 0) {
+                    this.FileInput.value = null;
+                    return;
+                }
+            }
+            var file;
+
+            var fr = new FileReader();
+            fr.onload = function () {
+                file = this.result;
+                let json = JSON.parse(file);
+
+                const texturewidth = (json.stopCrl - json.startCrl) / json.stepCrl + 1;
+                const textureheight = (json.stopZ - json.startZ) / json.stepZ + 1;
+                const traces = json.traces;
+
+                let idx = 0;
+                let csv = [""]; //new Uint8Array(this.texturewidth * this.textureheight * 2);
+                for (var j = 0; j < textureheight-1; j++) {
+                    for (var i = 0; i<texturewidth; i++) {
+                        var tidx = j + i * textureheight +1;
+                        var trc = traces[tidx];
+                        csv  += trc + ','
+                    }
+
+                    csv += '\n';
+                }
+
+
+                console.log(csv)
+
+
+
+            }
+
+
+
+            fr.readAsText(this.FileInput.files[0]);
+
+        }
+
+
+    </script>
+</body>
+
+</html>
