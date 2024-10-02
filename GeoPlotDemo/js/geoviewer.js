@@ -1,5 +1,4 @@
-﻿class GeoViewer
-{
+﻿class GeoViewer {
     constructor(maindiv) {
         this.maindiv = maindiv;
         this.bgcolor = "rgb(100,100,150)";
@@ -13,10 +12,10 @@
 
 
         this.maindiv.appendChild(this.FileInput);
-       
+
 
         this.createLeftPane();
-        
+
         this.createRightPane();
 
         this.SG;
@@ -25,23 +24,20 @@
         this.addTab();
     }
 
-    addTab()
-    {
+    addTab() {
         //this.tabview.addTab();
     }
 
-    createLeftPane()
-    {
+    createLeftPane() {
         this.leftdiv = document.createElement("div");
         //this.leftdiv.className = "column left";
         this.leftdiv.style.backgroundColor = this.bgcolor;
-   
+
         this.maindiv.appendChild(this.leftdiv);
         this.geoplot = new GeoPlot(this.leftdiv);
     }
 
-    createRightPane()
-    {
+    createRightPane() {
         this.rightdiv = document.createElement("div");
         this.rightdiv.className = "column right";
         this.rightdiv.style.backgroundColor = this.bgcolor;
@@ -57,7 +53,7 @@
         this.tabdiv.style.backgroundColor = "#ccc";
 
         //this.rightdiv.appendChild(this.mapdiv);
-        
+
 
         this.maindiv.appendChild(this.rightdiv);
         this.mapview = new MapView(this.rightdiv);
@@ -68,35 +64,32 @@
         //this.tabview = new TabView(this.tabdiv);
     }
 
-    addItem(item)
-    {
-       this.geoplot.addItem(item);
+    addItem(item) {
+        this.geoplot.addItem(item);
     }
-    
-    fileInputCB()
-    {
+
+    fileInputCB() {
         //var filereader = document.getElementById("openFile");
-        if ('files' in this.FileInput)
-        {
-            if (this.FileInput.files.length == 0)
-            {
+        if ('files' in this.FileInput) {
+            if (this.FileInput.files.length == 0) {
                 this.FileInput.value = null;
                 return;
             }
-        }
-        var file;
-        var that = this;
-        var fr = new FileReader();
-        fr.onload = function ()
-        {
-            file = this.result;
-            var json = JSON.parse(file);
-            var item = that.geoplot.addJSON(json);
-            that.mapview.addItem(item);
+            var that = this;
+            Array.from(this.FileInput.files).forEach(fileName => {
+                var fr = new FileReader();
+                
+                fr.onload = function () {
+                    const file = this.result;
+                    var json = JSON.parse(file);
+                    var item = that.geoplot.addJSON(json);
+                    that.mapview.addItem(item);
+                }
+                fr.readAsText(fileName);
+            })
         }
 
-        fr.readAsText(this.FileInput.files[0]);
-    }      
-    
- 
+    }
+
+
 }

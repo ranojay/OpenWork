@@ -1,9 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title></title>
     <meta charset="utf-8" />
 </head>
+
 <body bgcolor="#ddd">
     <!--<h3>Webview</h3>-->
 
@@ -14,7 +16,7 @@
 
     <div id="mainframe"> </div>
 
-   <script type="text/javascript" src="js/geoplot-min.js"></script>
+    <script type="text/javascript" src="js/geoplot-min.js"></script>
 
     <script>
 
@@ -27,34 +29,31 @@
         FileInput.setAttribute("value", "Survey");
         FileInput.addEventListener('change', () => FileInputCB());
 
-        
+
         win.appendChild(FileInput);
-        
+
         var geoplot = new GeoPlot(win);
 
-        function FileInputCB()
-        {
+        function FileInputCB() {
             //var filereader = document.getElementById("openFile");
-            if ('files' in this.FileInput)
-            {
-                if (this.FileInput.files.length == 0)
-                {
+            if ('files' in this.FileInput) {
+                if (this.FileInput.files.length == 0) {
                     this.FileInput.value = null;
                     return;
                 }
-            }
-            var file;
 
-            var fr = new FileReader();
-            fr.onload = function ()
-            {
-                file = this.result;
-                var json = JSON.parse(file);
-                geoplot.addJSON(json);
-               
+                Array.from(this.FileInput.files).forEach(fileName => {
+                    var fr = new FileReader();
+                    fr.readAsText(fileName);
+                    fr.onload = function () {
+                        file = this.result;
+                        var json = JSON.parse(file);
+                        geoplot.addJSON(json);
+
+                    }
+                })
             }
 
-            fr.readAsText(this.FileInput.files[0]);
 
         }
 
@@ -63,4 +62,5 @@
 
 
 </body>
+
 </html>
