@@ -1,6 +1,10 @@
 <div>
-    <app-sticks-table [sticks]="sticks"></app-sticks-table>
+    <!-- <app-sticks-table [sticks]="sticks"></app-sticks-table>
     <app-sticks-image-list [sticks]="sticks"></app-sticks-image-list>
     <app-sticks-form></app-sticks-form>
-    <div class="lines"><app-sticks-chart  [sticks]="sticks"></app-sticks-chart></div>
+    <div class="lines"><app-sticks-chart  [sticks]="sticks"></app-sticks-chart></div> -->
+    <div>
+        <input type="button" value="Fetch Data" (click)="onClick()">
+    </div>
+    <app-stocks-chart [data]="data"></app-stocks-chart>
 </div>
