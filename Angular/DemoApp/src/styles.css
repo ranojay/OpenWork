@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.cards-container {
+    display: flex;
+}
+
+.card {
+    background-color:rgb(243, 243, 247);
+    width: 200;
+    height: 100;
+    align-self: center;
+    border-radius: 2% 2%;
+}

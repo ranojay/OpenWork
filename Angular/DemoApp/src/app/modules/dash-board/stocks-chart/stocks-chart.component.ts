@@ -77,7 +77,7 @@ export class StocksChartComponent implements OnInit, OnChanges {
       return;
     }
 
-    this.parseData(data);
+    //this.parseData(data);
     this.prepareChart(data);
     this.drawChart();
   }
@@ -94,17 +94,17 @@ export class StocksChartComponent implements OnInit, OnChanges {
       d => [this.xScale(new Date(d.Date)), this.yScale(d.Close)]
     );
 
-    
+
     const lineGenerator = d3.line();
-    lineGenerator.curve(d3.curveMonotoneX);
+    //lineGenerator.curve(d3.curveMonotoneX);
     // Add the line path
     this.svg.append("path")
       .attr("class", "line")
       .attr("fill", "none")
-      .attr("stroke", "#22B14C")
+      .attr("stroke", "#1E90FF")
       .attr("stroke-width", 1)
       .attr("d", lineGenerator(initialPoints))
-      .transition().delay(200)
+      .transition().delay(300)
       .attr("d", lineGenerator(points))
 
     const flat = d3.area()
@@ -112,10 +112,11 @@ export class StocksChartComponent implements OnInit, OnChanges {
       .y0(this.height)
       .y1(this.height);
 
-      const area = d3.area()
+    const area = d3.area()
       .x(d => (d[0]))
       .y0(this.height)
-      .y1(d => (d[1]));
+      .y1(d => (d[1]))
+    //.curve(d3.curveMonotoneX);
 
     const gradient = this.svg.append("defs")
       .append("linearGradient")
@@ -125,21 +126,21 @@ export class StocksChartComponent implements OnInit, OnChanges {
       .attr("y1", "0%")
       .attr("y2", "100%")
       .attr("spreadMethod", "pad");
-      gradient.append("stop")
-      .attr("offset", "0%")
-      .attr("stop-color", "#22B14C")
+    gradient.append("stop")
+      .attr("offset", "50%")
+      .attr("stop-color", "#1E90FF")
       .attr("stop-opacity", 1);
-    
+
     gradient.append("stop")
       .attr("offset", "100%")
-      .attr("stop-color", "#22B14C")
+      .attr("stop-color", "#1E90FF")
       .attr("stop-opacity", 0);
 
     // Add the area path
     this.svg.append("path")
       .attr("class", "area")
       .attr("d", flat(points))
-      .transition().delay(200)
+      .transition().delay(300)
       .attr("d", area(points))
       .style("fill", "url(#gradient)")
       .style("opacity", .5);
